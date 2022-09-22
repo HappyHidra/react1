@@ -4,4 +4,4 @@ import FirstOne from "./components/FirstOne";
 import { getUser, getUsers } from "./state";
 import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<FirstOne function={{ key_getUser: getUser, key_getUsers: getUsers }} />);
+root.render(<FirstOne fr={{ key_getUser: getUser, key_getUsers: getUsers }} />);

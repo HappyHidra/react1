@@ -1,7 +1,6 @@
 import styles from "../styles/Profile.module.css";
 const Profile = (props) => {
-  console.log(props.function());
-  let user = props.function();
+  let user = props.fuu();
   return (
     <div className="row">
       <div className="col-sm-3">
