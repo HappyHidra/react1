@@ -1,12 +1,9 @@
 import React from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import Profile from "./Profile";
-const Messages = () => {
-  return <h1>Messages</h1>;
-};
-const Settings = () => {
-  return <h1>Settings</h1>;
-};
+import Messages from "./Messages";
+import Settings from "./Settings";
+import Friends from "./Friends";
 
 const FirstOne = (props) => {
   console.log(props);
@@ -32,9 +29,10 @@ const FirstOne = (props) => {
           </div>
           <div className="col-sm-9">
             <Routes>
-              <Route path="/profile" element={<Profile function={props.function} />} />
+              <Route path="/profile" element={<Profile function={props.function.key_getUser} />} />
               <Route path="/messages" element={<Messages />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/friends" element={<Friends function={props.function.key_getUsers} />} />
             </Routes>
           </div>
         </div>
