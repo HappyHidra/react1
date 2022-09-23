@@ -1,27 +1,34 @@
+import { NavLink } from "react-router-dom";
+
 const TableRow = (props) => {
   return (
     <tr>
       <th scope="row">{props.index + 1}</th>
-      <td>{props.name}</td>
-      <td>{props.lastName}</td>
+      <td>
+        <NavLink to={"profile/" + props.id}>
+          {props.name}
+          {props.lastName}
+        </NavLink>
+      </td>
     </tr>
   );
 };
 
 const Friends = (props) => {
   let users = props.fuu();
-  let userAmount = Object.keys(users).length;
+  let userAmount = users.length;
   let userRow = [];
   for (let i = 0; i < userAmount; i++) {
-    userRow.push(<TableRow key={i} index={i} name={users[i].name} lastName={users[i].lastName} />);
+    userRow.push(
+      <TableRow key={i} id={users[i].id} index={i} name={users[i].name} lastName={users[i].lastName} />
+    );
   }
   return (
     <table className="table table-striped">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Имя</th>
-          <th scope="col">Фамилия</th>
+          <th scope="col">Имя и Фамилия</th>
         </tr>
       </thead>
       <tbody>{userRow}</tbody>

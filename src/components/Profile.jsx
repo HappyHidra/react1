@@ -1,6 +1,9 @@
 import styles from "../styles/Profile.module.css";
+
 const Profile = (props) => {
-  let user = props.fuu();
+  let userId = location.pathname.split("/")[2];
+  let user = props.fuu(userId);
+
   return (
     <div className="row">
       <div className="col-sm-3">
